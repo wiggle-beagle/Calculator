@@ -6,6 +6,11 @@ public class Calculator {
     BinaryOperator<Integer> addition = (a, b) -> a + b;
     BinaryOperator<Integer> subtraction = (a, b) -> a - b;
     BinaryOperator<Integer> multiplication = (a, b) -> a * b;
+    BinaryOperator<Integer> divide = (x, y) -> {
+        if (y == 0)
+            throw new RuntimeException();
+        else return x / y;
+    };
 
     UnaryOperator<Integer> pow = x -> x * x;
     UnaryOperator<Integer> abs = x -> {
